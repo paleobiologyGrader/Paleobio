@@ -1,0 +1,49 @@
+Beginners Test:
+Mtcars is a data.frame. I used the class() function. 
+Precip is a vector. I used is(precip, “vector”)
+as(trees, “matrix”)
+Atlanta
+data.frame()
+Precip does contain numeric data. typeof(precip)
+mtcars[2, 7], mtcars[2, “qsec”], mtcars[“Mazda RX4 Wag”, 7], mtcars[“Mazda RX4 Wag”, “qsec”]
+precip[“Juneau”]<-23, precip[“Phoenix”]<-46, precip[“Sacramento”]<-12
+There are no trees with a girth greater than volume. trees[“Girth”>”Volume”]
+2356.614
+Intermediate Test
+This tells the sampling to happen with replacement, meaning the number could come up again.
+MyMatrix[which(MyMatrix==TRUE)]<-0, MyMatrix[which(MyMatrix==FALSE)]<-1
+ all(MyMatrix, 2)
+15
+apply(MyMatrix, 2, sum)
+apply(MyMatrix, 2, prod)
+MyMatrix[which(MyMatrix==10)]<-12
+33
+  MyData<-data.frame(MyMatrix)      >lapply(MyData[,12], as.character)
+ Sums<-rowSums(MyMatrix)
+	Sums<-Sums>70
+	cbind(MyMatrix, Sums)
+Advanced Test
+  HelloWorld<-function(Argument){print(Argument)}  
+ > HelloWorld("Hello World")
+2. >Setosa<-iris[which(iris[,"Species"]=="setosa"),] >Virginica<-iris[which(iris[,"Species"]=="virginica"),] >Versicolor<-iris[which(iris[,"Species"]=="versicolor"),]
+> Species<-c(Setosa, Virginica, Versicolor)
+3. for (i in  1:150){
+  if(iris[,Sepal.Width][i]>3.1{
+    iris[,Sepal.Length][i]+iris[,Petal.Length][i]
+  }
+  else(iris[,Sepal.Width][i]<3.1{
+    iris[,Sepal.Length][i]-iris[Petal.Length][i]
+  }
+}
+ 4.> 6cyl<-mtcars[which(mtcars[,2]==6)]                 >mean(6cyl[,mpg])
+5. 
+ 
+ 
+ 
+Expert Test
+mean: 34.885771, standard deviation: 13.70665, median: 36.6
+I think that it is difficult to determine one as being better. The answer to that question is decided by what we are looking to achieve by displaying the data. If we simply want a visual display of all of the cities’ precipitation, the bar plot is a better function. The histogram does not show each individual city, but it does organize the data according to the amount of the precipitation and so we are able to see the average rainfall across the country. Histograms are typically more statistically powerful graph.
+RandomNormal<-rnorm(70, mean = 34.88571, sd = 13.70665)
+The RandomNormal data set had a .787 higher mean. Based on means, it does seem like the two data sets have the same distribution.
+Based on the density plots, the two have fairly different distributions. This shows that the comparison solely based on means is not that meaningful. While the means are similar, the rest of the distribution is different. 
+
