@@ -1,0 +1,27 @@
+> 10/10
+
+## Summary
+        
+This article set out to answer several questions. First, it tried to answer the question whether niche conservatism would be seen at higher taxonomic levels beyond species, specifically to the family and genus levels. Further, the article looked at the idea of geographic distribution was more impacted by the environmental factors or species-inherited traits. Finally, the article wanted to answer the question of whether the extant species will expand their geographic range as a result of the extinction of closely related species due to decreased competition. 
+        
+First, the article presents these questions and discusses each topic in an introductory level of information. It also discusses the importance of this study due to the fact that there has been almost no examination of niche conservatism above the species level. One important point that the article addresses early on is that it uses geographic ranges of families and genera as a proxy for the ecological niches of those respective groups. The range of this study is then discussed, being limited to mammals due to the relatively clear distinction of taxonomic classifications. The range is also discussed as the time frame of the study is concerned. The study limits itself to the changes in geographic range over the last 130,000 years with an emphasis on the last 100 years as we witness a change in environments due to climate change. As far as data is concerned, the article specifies that it will be using fossil data to try to determine the range of the studied groups. 
+  
+Following the introduction, the article has a results section. This section discusses the statistical correlations between the families and genera over the 130,000 years with respect to the geographic range that we witness over that time. The study used p-values and chi square values to show the significance of this correlation. 
+
+> What about the p-values and chi-square values?
+
+Finally, there is a discussion section that looks at the numbers we see in the results section. Most significantly, the discussion section provides answers to the overlying questions of the article. First, the article says that despite the glacial and interglacial cycles, the geographic range of the genera and families remained relatively constant. This tells us that there is niche conservatism at levels above species, at least as high as family and genus. Furthermore, despite extinctions that were seen in this time period, the geographic range of these groups did not change. This tells us that the closely related extant species are able to fill this gap in the ecosystem due to decreased competition in the niche. Lastly, the article explains that they believe that the species-inherited traits play a larger role in the realized geographic range because throughout the studied time period there were great changes to the ecosystems and climate and this did not result in significant change in range. 
+
+## What I liked
+
+In general, I thought that this article was very informative. I thought that it walked the line between digging deep into information while still making it understandable very well. Specifically, I enjoyed both the introduction and more so the discussion section. The introduction layed out the questions very clearly, while giving the reader the amount of information necessary to follow the science that this paper went into. The discussion section was well written and went into a clear, in depth discussion of the results and what they mean. There were clear answers to each of the questions. Finally, I thought that the paper had a great call to action in the areas that these ideas needed to be further studied. This can be specifically seen when the author talks about the need to expand this experiment passed the spectrum of only mammals. 
+
+> I'm glad that you found it readable, but I'm less interested in aspects of the readability and layout that you liked, and more with what about the science you liked.
+ 
+## What I disliked
+ 
+The major flaw that I found with this paper is the fact that it has such a small range of data. While the paper does a good job of acknowledging that it only covers mammals, I think that just acknowledging is not good enough. This study has a dramatically smaller impact that I believe it stated in the discussion section due to this shortcoming. While a study on a larger spectrum would increase the cost of this experiment dramatically, I believe that it is necessary to make any of the definitive conclusions that the paper tries to make. While this experiment can be a start to an innovation in the way fossils can be used to study life, standing alone, this paper can not have a large impact. 
+
+## Figures and Tables
+
+Table 1 in this paper displays range sizes of different genera both at the LH and LP and also the size of the bodies. Figure 1 does a good job of clearly displaying the change in the area that the different genera underwent between the LP to the LH. Figure 2 does the same thing but in a visual display on a map of North America. This is perhaps a better display, however it only displays four genera as opposed to the entire study. Figure 3 is a plot of chi square values and a line of best fit for these values. Finally, Figure 4 helps to answer the question about geographic range and how extinction affects this. We can see that there is a relatively similar geographic range despite a lot of extinctions.
