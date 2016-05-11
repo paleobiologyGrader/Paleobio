@@ -1,5 +1,9 @@
-﻿Problem Set 1
-1. > TriassicDiapsids<- downloadPBDB("Diapsida", "Anisian", "Rhaetian")
+> 20/20 + EC
+
+## Problem Set 1
+1) 
+````R
+> TriassicDiapsids<- downloadPBDB("Diapsida", "Anisian", "Rhaetian")
 > TriassicSynapsids<- downloadPBDB("Synapsida", "Anisian", "Rhaetian")
 > TriassicDiapsids<- cleanRank(TriassicDiapsids, "genus")
 > TriassicSynapsids<- cleanRank(TriassicSynapsids, "genus")
@@ -7,7 +11,11 @@
 > JurassicSynapsids<- downloadPBDB("Synapsida", "Jurassic", "Neogene")
 > JurassicSynapsids<- cleanRank(JurassicSynapsids, "genus")
 > JurassicDiapsids<- cleanRank(JurassicDiapsids, "genus")
-2. > length(table(TriassicDiapsids[,"genus"]))
+````
+
+2) 
+````R
+> length(table(TriassicDiapsids[,"genus"]))
 [1] 389
 > length(table(TriassicSynapsids[,"genus"]))
 [1] 116
@@ -15,7 +23,12 @@
 [1] 4689
 > length(table(JurassicDiapsids[,"genus"]))
 [1] 2753
-3. Synapsid Survivors: 3, Synapsid Victims: 107, Diapsid Survivors: 14, Diapsid Victims: 350 > TriassicDiapsidsOnly<-subset(TriassicDiapsids,TriassicDiapsids[,"min_ma"] >= 201)
+````
+
+3) 
+
+````R
+Synapsid Survivors: 3, Synapsid Victims: 107, Diapsid Survivors: 14, Diapsid Victims: 350 > TriassicDiapsidsOnly<-subset(TriassicDiapsids,TriassicDiapsids[,"min_ma"] >= 201)
 > TriassicSynapsidsOnly<-subset(TriassicSynapsids,TriassicSynapsids[,"min_ma"] >= 201)
 > JurassicDiapsidsOnly<-subset(JurassicDiapsids, JurassicDiapsids[,"max_ma"]<=201)
 > JurassicSynapsidsOnly<-subset(JurassicSynapsids, JurassicSynapsids[,"max_ma"]<=201)
@@ -31,36 +44,71 @@
 > TriassicSynapsidsSurvivors<-intersect(TriassicSynapsidsGenera,unique(JurassicSynapsids[,"genus"]))
 > TriassicDiapsidsVictims<-setdiff(TriassicDiapsidsGenera,unique(JurassicDiapsids[,"genus"]))
 > TriassicSynapsidsVictims<-setdiff(TriassicSynapsidsGenera,unique(JurassicSynapsids[,"genus"]))
-4. Odds Ratio: 1.4266666667                                                                                                   > TriassicDiapsidsOdds<-(length(TriassicDiapsidsSurvivors)/length(TriassicDiapsidsGenera)) / (length(TriassicDiapsidsVictims)/length(TriassicDiapsidsGenera))
+````
+
+4) 
+
+````R
+Odds Ratio: 1.4266666667                                                                                                   > TriassicDiapsidsOdds<-(length(TriassicDiapsidsSurvivors)/length(TriassicDiapsidsGenera)) / (length(TriassicDiapsidsVictims)/length(TriassicDiapsidsGenera))
 > TriassicSynapsidsOdds<- (length(TriassicSynapsidsSurvivors)/length(TriassicSynapsidsGenera)) / (length(TriassicSynapsidsVictims)/length(TriassicSynapsidsGenera))
-> OddsRatio<- TriassicDiapsidsOdds/ TriassicSynapsidsOdds                                             > log(OddsRatio)
+> OddsRatio<- TriassicDiapsidsOdds/ TriassicSynapsidsOdds                                             
+> log(OddsRatio)
 [1] 0.3553407
-5. No, as we can see, the lower limit is negative and therefore it is not statistically significant. > StandardError<-sqrt(1/length(TriassicSynapsidsSurvivors) + 1/length(TriassicSynapsidsVictims) + 1/length(TriassicDiapsidsSurvivors) + 1/length(TriassicDiapsidsVictims))
+````
+
+5) No, as we can see, the lower limit is negative and therefore it is not statistically significant. 
+
+````R
+> StandardError<-sqrt(1/length
+(TriassicSynapsidsSurvivors) + 1/length(TriassicSynapsidsVictims) + 1/length(TriassicDiapsidsSurvivors) + 1/length(TriassicDiapsidsVictims))
 > UpperLimit<-log(OddsRatio) + (StandardError*1.96)
 > LowerLimit<-log(OddsRatio) - (StandardError*1.96)
 > UpperLimit
 [1] 1.620968
 > LowerLimit
 [1] -0.9102865
-Problem Set 2
-   1. > TriassicDiapsidSynapsid<- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?base_name=Diapsida, Synapsida&taxon_reso=species&interval=Anisian,Rhaetian&show=class,genus,paleoloc")> JurassicDiapsidSynapsid<- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?base_name=Diapsida, Synapsida&taxon_reso=species&interval=Jurassic,Neogene&show=class,genus,paleoloc")
-   2. > MeanLatitudes<-tapply(TriassicDiapsidSynapsid[,"paleolat"],TriassicDiapsidSynapsid[,"genus"],mean)
-   3. > TriassicSurvivors<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%unique(JurassicDiapsidSynapsid[,"genus"])==TRUE)
+````
+
+## Problem Set 2
+
+1) 
+````R
+> TriassicDiapsidSynapsid<- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?base_name=Diapsida, Synapsida&taxon_reso=species&interval=Anisian,Rhaetian&show=class,genus,paleoloc")> JurassicDiapsidSynapsid<- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?base_name=Diapsida, Synapsida&taxon_reso=species&interval=Jurassic,Neogene&show=class,genus,paleoloc")
+````
+
+2) `> MeanLatitudes<-tapply(TriassicDiapsidSynapsid[,"paleolat"],TriassicDiapsidSynapsid[,"genus"],mean)`
+   
+3) 
+````R
+> TriassicSurvivors<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%unique(JurassicDiapsidSynapsid[,"genus"])==TRUE)
 > TriassicSurvivors<-unique(TriassicSurvivors[,"genus"])
 > TriassicVictims<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%unique(JurassicDiapsidSynapsid[,"genus"])!=TRUE)
 > TriassicVictims<-unique(TriassicVictims[,"genus"])
-   4. > TriassicSynapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicSynapsid[,"genus"]!=TRUE)
+````   
+   
+4) 
+````R
+> TriassicSynapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicSynapsid[,"genus"]!=TRUE)
 > TriassicDiapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicDiapsid) 
-   5.  > FinalMatrix<-merge(MeanLatitudes,TJVictims,all=TRUE,by="row.names")
+````   
+   
+5) 
+````R
+> FinalMatrix<-merge(MeanLatitudes,TJVictims,all=TRUE,by="row.names")
 > FinalMatrix<-transform(FinalMatrix,row.names=Row.names,Row.names=NULL)
 > colnames(FinalMatrix)<-c("MeanLatitudes","Survivor/Victim")
 > FinalMatrix[is.na(FinalMatrix[,"Survivor/Victim"]),]<-1Regression<-glm(FinalMatrix[,"Survivor/Victim"]~FinalMatrix[,"MeanLatitudes"],family="binomial")
         summary(Regression)
-        I found that the slope of the regression is 0.001813. This means that for every degree north, the log odds of survival increase by .001813. While this is a positive relationship, the correlation is fairly weak. So while the mean latitude can be used to predict survivorship, it is not a great indicator. 
+````
+
+I found that the slope of the regression is 0.001813. This means that for every degree north, the log odds of survival increase by .001813. While this is a positive relationship, the correlation is fairly weak. So while the mean latitude can be used to predict survivorship, it is not a great indicator. 
 
 
-Extra Credit:
-      1. > TriassicSynapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicSynapsid[,"genus"]!=TRUE)
+## Extra Credit:
+1) 
+
+````R
+> TriassicSynapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicSynapsid[,"genus"]!=TRUE)
 > TriassicDiapsidOcc<-subset(TriassicDiapsidSynapsid,TriassicDiapsidSynapsid[,"genus"]%in%TriassicDiapsid)
 > Diapsid<-array(0,dim=length(TriassicDiapsidOcc),dimnames=list(TriassicDiapsidOcc)) >TriassicDiapsidOcc<-unique(TriassicDiapsidOcc[,"genus"])
 > 
@@ -70,6 +118,6 @@ Extra Credit:
 > Final2Matrix<-transform(Final2Matrix,row.names=Row.names,Row.names=NULL)
 > Final2Matrix[is.na(Final2Matrix[,"x"]),]<-1 
         Regression<-glm(FinalMatrix[,"Survivor/Victim"]~FinalMatrix[,"MeanLatitudes"]+Final2Matrix,family="binomial")
-
+````
 
 The Synapsid/Diapsid status is more important than the paleolatitude.
