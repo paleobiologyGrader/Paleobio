@@ -1,34 +1,58 @@
-﻿Nathan Loveless
+Nathan Loveless
 Lab 13
-Problem Set 1
-1. Silurian:423           Ordovician: 211, This is the gamma diversity.                                          > dim(SilurianMatrix)
+
+> 20/20
+
+## Problem Set 1
+
+1) Silurian:423           Ordovician: 211, This is the gamma diversity.                                          
+````R
+> dim(SilurianMatrix)
 [1]  48 423
 > dim(OrdovicianMatrix)
 [1]  38 211
-2. Silurian: 42.72. Ordovician: 26.6     This is the alpha diversity. > table(SilurianMatrix)
+````
+
+2) Silurian: 42.72. Ordovician: 26.6     This is the alpha diversity. 
+
+````R
+> table(SilurianMatrix)
 SilurianMatrix
    0     1 
 18250  2054 
 > 2054/48
-[1] 42.79167              > table(OrdovicianMatrix)
+[1] 42.79167              
+> table(OrdovicianMatrix)
 OrdovicianMatrix
   0    1 
 7007 1011 
 > 1011/38
 [1] 26.60526
-3. Silurian: 380.2 Ordovician: 184.4. This is the beta diversity.  
+````
+
+3) Silurian: 380.2 Ordovician: 184.4. This is the beta diversity.  
+
+````R
 > 423-42.79167
 [1] 380.2083
 > 211-26.60
 [1] 184.4
-4. Alpha diversity: Increases 16.12, beta diversity: increases 195.8, gamma: increases 212
-5. Alpha: Silurian: 10.1%, Ordovician: 12.6%
+````
+
+4) Alpha diversity: Increases 16.12, beta diversity: increases 195.8, gamma: increases 212
+
+5) Alpha: Silurian: 10.1%, Ordovician: 12.6%
         Beta: Silurian: 89.9%, Ordovician: 87.4%
         Beta diversity increases from the Ordovician to Silurian. 
         This means that the Silurian is less cosmopolitan than the Ordovician. 
-6. The alpha diversity then depends on the gamma diversity. Therefore, if the gamma diversity has an error, alpha diversity is also incorrect. 
-Problem Set 2
-1. > LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
+
+6) The alpha diversity then depends on the gamma diversity. Therefore, if the gamma diversity has an error, alpha diversity is also incorrect. 
+
+
+## Problem Set 2
+1) 
+````R
+> LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
 > EarlyTriassic<-downloadPBDB(Taxa="Animalia",StartInterval="Induan",StopInterval="Ladinian")
 > LateCretaceous<-downloadPBDB(Taxa="Animalia",StartInterval="Santonian",StopInterval="Maastrichtian")
 > EarlyPaleogene<-downloadPBDB(Taxa="Animalia",StartInterval="Danian",StopInterval="Lutetian")
@@ -52,9 +76,11 @@ Problem Set 2
 > EarlyTriassic<-cullMatrix(EarlyTriassic,2,10)
 > LateCretaceous<-cullMatrix(LateCretaceous,2,10)
 > EarlyPaleogene<-cullMatrix(EarlyPaleogene,2,10)
+````
 
+2)
 
-2. Late Permian:
+Late Permian:
         Gamma: 311
         Alpha: 57.63
         Beta: 253.37
@@ -70,6 +96,8 @@ Early Paleogene
         Gamma: 1031
         Alpha: 52.83
         Beta: 978.17
+
+````R
 > table(LatePermian)
 LatePermian
   0    1 
@@ -100,9 +128,11 @@ EarlyPaleogene
 117380   6340 
 > 6340/120
 [1] 52.83333
+````
 
+3)  
 
-3.  Late Permian
+Late Permian
         Alpha: 18.5%
         Beta: 81.5%
 Early Triassic:
@@ -124,17 +154,21 @@ Early Paleogene:
 [1] 0.0748062
 > 52.83/1031
 [1] 0.05124151
+````
+
+4) Alpha diversity decreases after both extinction events.
 
 
-4. Alpha diversity decreases after both extinction events.
+5) Alpha diversity increases after the End-Permian extinction event, but decreases after the End-Cretaceous extinction event.
 
 
-5. Alpha diversity increases after the End-Permian extinction event, but decreases after the End-Cretaceous extinction event.
+## Problem Set 3
+   
+1) 
 
-
-Problem Set 3
-   1. OrdovicianMatrix<-abundanceMatrix(LateOrdovician,SampleDefinition="unit_name",TaxonRank="genus")
-> 
+````R
+> OrdovicianMatrix<-abundanceMatrix(LateOrdovician,SampleDefinition="unit_name",TaxonRank="genus")
+ 
 > SilurianMatrix<-abundanceMatrix(EarlySilurian,SampleDefinition="unit_name",TaxonRank="genus")
 > TriassicMatrix<-abundanceMatrix(EarlyTriassic,SampleDefinition="unit_name",TaxonRank="genus")
 > PaleogeneMatrix<-abundanceMatrix(EarlyPaleogene,SampleDefinition="unit_name",TaxonRank="genus")
@@ -146,7 +180,11 @@ Problem Set 3
 > TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
 > CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
 > PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
-2. Ordovician
+````
+
+2) 
+
+Ordovician
         Alpha: 2.78
         Beta: 208.22
         Gamma: 211
@@ -170,6 +208,8 @@ Paleogene
         Alpha: 3.36
         Beta: 1027.64
         Gamma: 1031
+
+````R
 > dim(OrdovicianMatrix)
 [1]  38 211
 > dim(SilurianMatrix)
@@ -194,9 +234,11 @@ Paleogene
 [1] 3.320595
 > mean(diversity(PaleogeneMatrix))
 [1] 3.462745
+````
 
+3) 
 
-3. Ordovician
+Ordovician
         Alpha: 1.32%
         Beta: 98.68%
 Silurian
@@ -214,6 +256,8 @@ Cretaceous
 Paleogene
         Alpha: .33%
         Beta: 99.67%
+
+````R
 > 2.78/211
 [1] 0.01317536
 > 3.21/423
@@ -226,19 +270,23 @@ Paleogene
 [1] 0.004283871
 > 3.36/1031
 [1] 0.003258972
+````
 
+4) 
 
-4. Ordovician to Silurian: Increase
-
+Ordovician to Silurian: Increase
 
 Permian to Triassic: Decrease
-
 
 Cretaceous to Paleogene: Increase
 
 
-5. Ordovician to Silurian: Decrease
+5)
+
+Ordovician to Silurian: Decrease
 Permian to Triassic: Increase
 Cretaceous to Paleogene: Decrease
-Problem Set 4
-      1. I do not think there is a consistent trend of beta diversity increasing or decreasing. Both are seen across different mass extinctions.
+
+## Problem Set 4
+
+1) I do not think there is a consistent trend of beta diversity increasing or decreasing. Both are seen across different mass extinctions.
